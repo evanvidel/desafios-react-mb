@@ -1,6 +1,8 @@
+
 const HelloWorld = () => {
   return (
-    <p>Hello, World!</p>
+    <div>Hello World</div>
   )
 }
+
 export default HelloWorld

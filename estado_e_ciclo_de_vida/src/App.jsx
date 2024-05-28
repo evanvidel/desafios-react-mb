@@ -19,7 +19,7 @@ function App() {
       <TodoList />
       <h2>6 - Verificador de Largura de tela</h2>
       <WindowWidthChecker />
-      <h2>6 - simulação requisição de API</h2>
+      <h2>6 - simulação requisição a API</h2>
       <DataFetcher />
     </>
   );

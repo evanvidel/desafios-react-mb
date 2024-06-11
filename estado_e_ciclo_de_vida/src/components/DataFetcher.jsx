@@ -5,7 +5,7 @@ const DataFetcher = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setData({ message: 'Olá, os dadoa chegaram...' });
+      setData({ message: 'Olá, os dadoa chegaram!' });
     }, 2000);
   },[]);
 

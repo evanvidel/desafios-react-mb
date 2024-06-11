@@ -1,13 +1,9 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import RegistrationForm from './components/RegistrationForm';
-import DynamicForm from './components/DynamicForm';
+import "./App.css";
+import RegistrationForm from "./components/RegistrationForm";
+import DynamicForm from "./components/DynamicForm";
+import ValidationForm from "./components/ValidationForm";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <h2>1 - Formulário de registro</h2>
@@ -15,6 +11,7 @@ function App() {
       <h2>2 - Formulário dinâmico</h2>
       <DynamicForm />
       <h2>3 - Validação de Formulário</h2>
+      <ValidationForm />
     </>
   );
 }

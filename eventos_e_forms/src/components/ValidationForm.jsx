@@ -1,23 +1,52 @@
 import { useState } from "react";
 
-const RegistrationForm = () => {
+const ValidationForm = () => {
   const [values, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [erros, setErros] = useState({
     name: "",
     email: "",
     password: "",
   });
 
   const handleChange = (e) => {
+    const { name, value } = event.target;
+
+    validate(name, value);
+
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     });
+
+    setErros({ ...erros, [name]: validate(name, value) });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(values);
   };
+
+  const validate = (name, value) => {
+    let errorMessage = "";
+
+    switch (name) {
+      case "name":
+        errorMessage = value ? "" : "O nome não pode ser em branco";
+        break;
+      case "email":
+        break;
+      case "password":
+        break;
+      default:
+        break;
+    }
+    return errorMessage;
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -28,6 +57,7 @@ const RegistrationForm = () => {
           value={values.name}
           onChange={handleChange}
         />
+        {erros.name && <p>{erros.name}</p>}
       </div>
       <div>
         <p>E-mail:</p>
@@ -51,5 +81,4 @@ const RegistrationForm = () => {
     </form>
   );
 };
-
-export default RegistrationForm;
+export default ValidationForm;
